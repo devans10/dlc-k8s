@@ -1,0 +1,13 @@
+---
+- hosts: all
+  remote_user: ansible
+  become: true
+  tasks:
+    - name: Update the system
+      yum:
+        name: "*"
+        state: latest
+    
+    - name: Reboot the system
+      reboot:
+        connect_timeout: 600

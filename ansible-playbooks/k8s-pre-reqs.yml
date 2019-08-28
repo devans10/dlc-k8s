@@ -1,0 +1,10 @@
+---
+- hosts: all
+  remote_user: ansible
+  become: true
+  tasks:
+    - name: Open port 6443
+      firewalld:
+        port: 6443/tcp
+        permanent: yes
+        state: enabled
